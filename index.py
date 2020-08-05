@@ -32,7 +32,7 @@ for mm in range(len(mensaje2)-1):
     if mensaje2[mm] != mensaje2[mm+1]:
         mensaje3.append(mensaje[mensaje2[mm+1]])
 #Palabras claves celular y correo
-nume_c,nume_co,eses = 0,0, [9999999]
+nume_c,nume_co,nume_ci,eses,cuidd = 0,0,0, [9999999], [9999999]
 for es in range(len(mensaje3)):#filtro
     nume_c += 1
     for filtrar in range(len(mensaje3[es])):
@@ -49,68 +49,123 @@ for es in range(len(mensaje3)):#filtro
         #aun le falta la limpieza y organizar el codigo
         #Ciudad
         if re.findall('santo',mensaje3[es][filtrar]) and re.findall('domingo',mensaje3[es][filtrar+1]):
-            ciudad.append(mensaje3[es][filtrar]+mensaje3[es][filtrar+1])
+            cuidd.append(es)
+            if es == cuidd[nume_ci]:
+                ciudad[es].append(f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}')
+            else:
+                ciudad.append([f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}'])
+            nume_ci =+1
         elif re.findall('distrito',mensaje3[es][filtrar]) and re.findall('nacional',mensaje3[es][filtrar+1]):
-            ciudad.append(mensaje3[es][filtrar]+mensaje3[es][filtrar+1])
+            cuidd.append(es)
+            if es == cuidd[nume_ci]:
+                ciudad[es].append(f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}')
+            else:
+                ciudad.append([f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}'])
+            nume_ci =+1
         elif re.findall('sto',mensaje3[es][filtrar]) and re.findall('dgo',mensaje3[es][filtrar+1]):
-            ciudad.append(mensaje3[es][filtrar]+mensaje3[es][filtrar+1])
+            cuidd.append(es)
+            if es == cuidd[nume_ci]:
+                ciudad[es].append(f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}')
+            else:
+                ciudad.append([f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}'])
+            nume_ci =+1
         elif re.findall('juan',mensaje3[es][filtrar]) and re.findall('dolio',mensaje3[es][filtrar+1]):
-            ciudad.append(mensaje3[es][filtrar]+mensaje3[es][filtrar+1])
+            cuidd.append(es)
+            if es == cuidd[nume_ci]:
+                ciudad[es].append(f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}')
+            else:
+                ciudad.append([f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}'])
+            nume_ci =+1
         elif re.findall('la',mensaje3[es][filtrar]) and re.findall('romana',mensaje3[es][filtrar+1]):
-            ciudad.append(mensaje3[es][filtrar]+mensaje3[es][filtrar+1])
+            cuidd.append(es)
+            if es == cuidd[nume_ci]:
+                ciudad[es].append(f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}')
+            else:
+                ciudad.append([f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}'])
+            nume_ci =+1
         elif re.findall('punta',mensaje3[es][filtrar]) and re.findall('cana',mensaje3[es][filtrar+1]):
-            ciudad.append(mensaje3[es][filtrar]+mensaje3[es][filtrar+1])
+            cuidd.append(es)
+            if es == cuidd[nume_ci]:
+                ciudad[es].append(f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}')
+            else:
+                ciudad.append([f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}'])
+            nume_ci =+1
         elif re.findall('cap',mensaje3[es][filtrar]) and re.findall('cana',mensaje3[es][filtrar+1]):
-            ciudad.append(mensaje3[es][filtrar]+mensaje3[es][filtrar+1])
+            cuidd.append(es)
+            if es == cuidd[nume_ci]:
+                ciudad[es].append(f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}')
+            else:
+                ciudad.append([f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}'])
+            nume_ci =+1
         elif re.findall('las',mensaje3[es][filtrar]) and re.findall('terrenas',mensaje3[es][filtrar+1]):
-            ciudad.append(mensaje3[es][filtrar]+mensaje3[es][filtrar+1])
+            cuidd.append(es)
+            if es == cuidd[nume_ci]:
+                ciudad[es].append(f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}')
+            else:
+                ciudad.append([f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}'])
+            nume_ci =+1
         elif re.findall('puerto',mensaje3[es][filtrar]) and re.findall('plata',mensaje3[es][filtrar+1]):
-            ciudad.append(mensaje3[es][filtrar]+mensaje3[es][filtrar+1])
+            cuidd.append(es)
+            if es == cuidd[nume_ci]:
+                ciudad[es].append(f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}')
+            else:
+                ciudad.append([f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}'])
+            nume_ci =+1
         elif re.findall('san',mensaje3[es][filtrar]) and re.findall('isidro',mensaje3[es][filtrar+1]):
-            ciudad.append(mensaje3[es][filtrar]+mensaje3[es][filtrar+1])
+            cuidd.append(es)
+            if es == cuidd[nume_ci]:
+                ciudad[es].append(f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}')
+            else:
+                ciudad.append([f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}'])
+            nume_ci =+1
         elif re.findall('bayahibe',mensaje3[es][filtrar]) or re.findall('bavaro',mensaje3[es][filtrar]) or re.findall('bávaro',mensaje3[es][filtrar]):
-            ciudad.append(mensaje3[es][filtrar])
+            cuidd.append(es)
+            if es == cuidd[nume_ci]:
+                ciudad[es].append(mensaje3[es][filtrar])
+            else:
+                ciudad.append([mensaje3[es][filtrar]])
+            nume_ci =+1
         #Sector
         elif re.findall('zona',mensaje3[es][filtrar]) and re.findall('universitaria',mensaje3[es][filtrar+1]):
-            sector.append(mensaje3[es][filtrar]+mensaje3[es][filtrar+1])
+            sector.append(f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}')
         elif re.findall('la',mensaje3[es][filtrar]) and re.findall('esperilla',mensaje3[es][filtrar+1]):
-            sector.append(mensaje3[es][filtrar]+mensaje3[es][filtrar+1])
+            sector.append(f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}')
         elif re.findall('el',mensaje3[es][filtrar]) and re.findall('vergel',mensaje3[es][filtrar+1]):
-            sector.append(mensaje3[es][filtrar]+mensaje3[es][filtrar+1])
+            sector.append(f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}')
         elif re.findall('arroyo',mensaje3[es][filtrar]) and re.findall('hondo',mensaje3[es][filtrar+1]):
-            sector.append(mensaje3[es][filtrar]+mensaje3[es][filtrar+1])
+            sector.append(f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}')
         elif re.findall('evaristo',mensaje3[es][filtrar]) and re.findall('morales',mensaje3[es][filtrar+1]):
-            sector.append(mensaje3[es][filtrar]+mensaje3[es][filtrar+1])
+            sector.append(f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}')
         elif re.findall('la',mensaje3[es][filtrar]) and re.findall('julia',mensaje3[es][filtrar+1]):
-            sector.append(mensaje3[es][filtrar]+mensaje3[es][filtrar+1])
+            sector.append(f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}')
         elif re.findall('bella',mensaje3[es][filtrar]) and re.findall('vista',mensaje3[es][filtrar+1]):
-            sector.append(mensaje3[es][filtrar]+mensaje3[es][filtrar+1])
+            sector.append(f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}')
         elif re.findall('los',mensaje3[es][filtrar]) and re.findall('prados',mensaje3[es][filtrar+1]):
-            sector.append(mensaje3[es][filtrar]+mensaje3[es][filtrar+1])
+            sector.append(f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}')
         elif re.findall('el',mensaje3[es][filtrar]) and re.findall('millón',mensaje3[es][filtrar+1]):
-            sector.append(mensaje3[es][filtrar]+mensaje3[es][filtrar+1])
+            sector.append(f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}')
         elif re.findall('el',mensaje3[es][filtrar]) and re.findall('millon',mensaje3[es][filtrar+1]):
-            sector.append(mensaje3[es][filtrar]+mensaje3[es][filtrar+1])
+            sector.append(f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}')
         elif re.findall('urbanización',mensaje3[es][filtrar]) and re.findall('fernandez',mensaje3[es][filtrar+1]):
-            sector.append(mensaje3[es][filtrar]+mensaje3[es][filtrar+1])
+            sector.append(f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}')
         elif re.findall('urbanizacion',mensaje3[es][filtrar]) and re.findall('fernandez',mensaje3[es][filtrar+1]):
-            sector.append(mensaje3[es][filtrar]+mensaje3[es][filtrar+1])
+            sector.append(f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}')
         elif re.findall('urbanización',mensaje3[es][filtrar]) and re.findall('real',mensaje3[es][filtrar+1]):
-            sector.append(mensaje3[es][filtrar]+mensaje3[es][filtrar+1])
+            sector.append(f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}')
         elif re.findall('urbanizacion',mensaje3[es][filtrar]) and re.findall('real',mensaje3[es][filtrar+1]):
-            sector.append(mensaje3[es][filtrar]+mensaje3[es][filtrar+1])
+            sector.append(f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}')
         elif re.findall('los',mensaje3[es][filtrar]) and re.findall('cacicazgos',mensaje3[es][filtrar]):
-            sector.append(mensaje3[es][filtrar]+mensaje3[es][filtrar+1])
+            sector.append(f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}')
         elif re.findall('el',mensaje3[es][filtrar]) and re.findall('cacique',mensaje3[es][filtrar]):
-            sector.append(mensaje3[es][filtrar]+mensaje3[es][filtrar+1])
+            sector.append(f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}')
         elif re.findall('las',mensaje3[es][filtrar]) and re.findall('praderas',mensaje3[es][filtrar]):
-            sector.append(mensaje3[es][filtrar]+mensaje3[es][filtrar+1])
+            sector.append(f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}')
         elif re.findall('mirador',mensaje3[es][filtrar]) and re.findall('norte',mensaje3[es][filtrar]):
-            sector.append(mensaje3[es][filtrar]+mensaje3[es][filtrar+1])
+            sector.append(f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}')
         elif re.findall('mirador',mensaje3[es][filtrar]) and re.findall('sur',mensaje3[es][filtrar]):
-            sector.append(mensaje3[es][filtrar]+mensaje3[es][filtrar+1])
+            sector.append(f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}')
         elif re.findall('gazcue',mensaje3[es][filtrar]) or re.findall('naco',mensaje3[es][filtrar]) or re.findall('piantini',mensaje3[es][filtrar]) or re.findall('Paraíso',mensaje3[es][filtrar]) or re.findall('Paraiso',mensaje3[es][filtrar]) or re.findall('serrallés',mensaje3[es][filtrar]) or re.findall('serralles',mensaje3[es][filtrar]) or re.findall('quisqueya',mensaje3[es][filtrar]) or re.findall('julieta',mensaje3[es][filtrar]) or re.findall('renacimiento',mensaje3[es][filtrar]) or re.findall('miradores',mensaje3[es][filtrar]):
-            sector.append(mensaje3[es][filtrar]+mensaje3[es][filtrar+1])
+            sector.append(f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}')
         #lugar
         elif re.findall('metro',mensaje3[es][filtrar]) and re.findall('country',mensaje3[es][filtrar]) and re.findall('club',mensaje3[es][filtrar]):
             lugar.append(mensaje3[es][filtrar]+mensaje3[es][filtrar+1]+mensaje3[es][filtrar+2])
@@ -163,6 +218,8 @@ for es in range(len(mensaje3)):#filtro
             cualitativos.append(mensaje3[es][filtrar])
     if len(correo) != nume_c:
         correo.append('')
+    if len(ciudad) != nume_c:
+        ciudad.append('')
     if len(celular) != nume_c:
         celular.append(celular[len(celular)-1])
 #para subir los datos al excel
@@ -172,3 +229,13 @@ for h in range(len(celular)):
 
 df = pd.DataFrame(data, columns = ['Celular', 'Correo'])
 df.to_excel('tabla.xlsx', sheet_name='Datos_de_Whatsapp')
+
+
+#for ioi in range(len(ciudad)):
+#    if ciudad[ioi] != '':
+#        print(ioi)
+#print(mensaje3[3003])
+
+
+print(len(celular))
+print(len(ciudad))
