@@ -4,8 +4,8 @@ import re
 import pandas as pd
 lista_archivos_chat,textos,palabras,posicion = [],[],[],[] #lista de achivos del chat
 mensaje,mensaje2,mensaje3 = [],[],[]
-celular, correo, ciudad, sector, lugar, av, tipo, cualitativos = [],[],[],[],[],[],[],[]
-data = {'Celular': [],'Correo': [],'Ciudad': [],'Sector': [],'Lugar': [],'Av. Principal (Sto. Dgo.)': [],'Tipo de inmueble': [],'Cualitativos': []}#tabla
+celular, correo, ciudad, sector, lugar, av, tipo, cualitativos,penthouse, monto = [],[],[],[],[],[],[],[],[],[]
+data = {'Celular': [],'Correo': [],'Ciudad': [],'Sector': [],'Lugar': [],'Av. Principal (Sto. Dgo.)': [],'Tipo de inmueble': [],'Cualitativos': [],'Penthouse': [],'Monto': [],'Descripcion': []}#tabla
 dirs1 = os.listdir("chat/")#achivos del chat 
 for file_chat in dirs1:
     lista_archivos_chat.append(f"chat/{file_chat}")   
@@ -21,7 +21,7 @@ for textos1 in textos:
         palabras.append(textos0)
 for desde in range(len(palabras)):
     if palabras[desde] == 'm.' and palabras[desde +1] == '-':#desde
-        posicion.append(desde+1)
+        posicion.append(desde-2)
 for jsjs in range(len(posicion)):
     mensaje.append(palabras[posicion[jsjs-1]:posicion[jsjs]])
 for ver1 in range(len(mensaje)): #cuantidad de mensajes
@@ -32,7 +32,7 @@ for mm in range(len(mensaje2)-1):
     if mensaje2[mm] != mensaje2[mm+1]:
         mensaje3.append(mensaje[mensaje2[mm+1]])
 #Palabras claves celular y correo
-nume_c,nume_co,na,na_sect,na_lug,na_av,na_tipo,na_cuali,eses,cuidd,sect,lug,avv,tip,cuali = 0,0,[],[],[],[],[],[],[9999999],[9999999],[9999999],[9999999],[9999999],[9999999],[9999999]
+nume_c,nume_co,na,na_sect,na_lug,na_av,na_tipo,na_cuali,na_monto,eses,cuidd,sect,lug,avv,tip,cuali,mon = 0,0,[],[],[],[],[],[],[],[9999999],[9999999],[9999999],[9999999],[9999999],[9999999],[9999999],[9999999]
 for es in range(len(mensaje3)):#filtro
     nume_c += 1
     for filtrar in range(len(mensaje3[es])):
@@ -126,7 +126,7 @@ for es in range(len(mensaje3)):#filtro
             else:
                 ciudad.append([mensaje3[es][filtrar]])
         #Sector
-        elif re.findall('zona',mensaje3[es][filtrar]) and re.findall('universitaria',mensaje3[es][filtrar+1]):
+        if re.findall('zona',mensaje3[es][filtrar]) and re.findall('universitaria',mensaje3[es][filtrar+1]):
             sect.append(es)
             na_sect.append(es)
             if es == sect[len(na_sect)-1]:
@@ -224,35 +224,35 @@ for es in range(len(mensaje3)):#filtro
                 sector[es].append(f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}')
             else:
                 sector.append([f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}'])
-        elif re.findall('los',mensaje3[es][filtrar]) and re.findall('cacicazgos',mensaje3[es][filtrar]):
+        elif re.findall('los',mensaje3[es][filtrar]) and re.findall('cacicazgos',mensaje3[es][filtrar+1]):
             sect.append(es)
             na_sect.append(es)
             if es == sect[len(na_sect)-1]:
                 sector[es].append(f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}')
             else:
                 sector.append([f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}'])
-        elif re.findall('el',mensaje3[es][filtrar]) and re.findall('cacique',mensaje3[es][filtrar]):
+        elif re.findall('el',mensaje3[es][filtrar]) and re.findall('cacique',mensaje3[es][filtrar+1]):
             sect.append(es)
             na_sect.append(es)
             if es == sect[len(na_sect)-1]:
                 sector[es].append(f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}')
             else:
                 sector.append([f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}'])
-        elif re.findall('las',mensaje3[es][filtrar]) and re.findall('praderas',mensaje3[es][filtrar]):
+        elif re.findall('las',mensaje3[es][filtrar]) and re.findall('praderas',mensaje3[es][filtrar+1]):
             sect.append(es)
             na_sect.append(es)
             if es == sect[len(na_sect)-1]:
                 sector[es].append(f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}')
             else:
                 sector.append([f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}'])
-        elif re.findall('mirador',mensaje3[es][filtrar]) and re.findall('norte',mensaje3[es][filtrar]):
+        elif re.findall('mirador',mensaje3[es][filtrar]) and re.findall('norte',mensaje3[es][filtrar+1]):
             sect.append(es)
             na_sect.append(es)
             if es == sect[len(na_sect)-1]:
                 sector[es].append(f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}')
             else:
                 sector.append([f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}'])
-        elif re.findall('mirador',mensaje3[es][filtrar]) and re.findall('sur',mensaje3[es][filtrar]):
+        elif re.findall('mirador',mensaje3[es][filtrar]) and re.findall('sur',mensaje3[es][filtrar+1]):
             sect.append(es)
             na_sect.append(es)
             if es == sect[len(na_sect)-1]:
@@ -267,7 +267,7 @@ for es in range(len(mensaje3)):#filtro
             else:
                 sector.append([mensaje3[es][filtrar]])
         #lugar
-        elif re.findall('metro',mensaje3[es][filtrar]) and re.findall('country',mensaje3[es][filtrar]) and re.findall('club',mensaje3[es][filtrar]):
+        if re.findall('metro',mensaje3[es][filtrar]) and re.findall('country',mensaje3[es][filtrar]) and re.findall('club',mensaje3[es][filtrar]):
             lug.append(es)
             na_lug.append(es)
             if es == lug[len(na_lug)-1]:
@@ -289,7 +289,7 @@ for es in range(len(mensaje3)):#filtro
             else:
                 lugar.append([f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}'])
         #av
-        elif re.findall('27',mensaje3[es][filtrar]) and re.findall('de',mensaje3[es][filtrar]) and re.findall('febrero',mensaje3[es][filtrar]):
+        if re.findall('27',mensaje3[es][filtrar]) and re.findall('de',mensaje3[es][filtrar]) and re.findall('febrero',mensaje3[es][filtrar]):
             avv.append(es)
             na_av.append(es)
             if es == avv[len(na_av)-1]:
@@ -395,7 +395,7 @@ for es in range(len(mensaje3)):#filtro
             else:
                 av.append([mensaje3[es][filtrar]])
         #tipo de inmueble 
-        elif re.findall('town',mensaje3[es][filtrar]) and re.findall('house',mensaje3[es][filtrar]):
+        if re.findall('town',mensaje3[es][filtrar]) and re.findall('house',mensaje3[es][filtrar]):
             tip.append(es)
             na_tipo.append(es)
             if es == tip[len(na_tipo)-1]:
@@ -410,7 +410,7 @@ for es in range(len(mensaje3)):#filtro
             else:
                 tipo.append([mensaje3[es][filtrar]])
         #cualitativos
-        elif re.findall('family',mensaje3[es][filtrar]) and re.findall('room',mensaje3[es][filtrar]):
+        if re.findall('family',mensaje3[es][filtrar]) and re.findall('room',mensaje3[es][filtrar]):
             cuali.append(es)
             na_cuali.append(es)
             if es == cuali[len(na_cuali)-1]:
@@ -424,13 +424,73 @@ for es in range(len(mensaje3)):#filtro
                 cualitativos[es].append(f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}')
             else:
                 cualitativos.append([f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}'])
-        elif re.findall('terraza',mensaje3[es][filtrar]) or re.findall('penthouse',mensaje3[es][filtrar]) or re.findall('ph',mensaje3[es][filtrar]) or re.findall('estudio',mensaje3[es][filtrar]) or re.findall('balcón',mensaje3[es][filtrar]) or re.findall('balcon',mensaje3[es][filtrar]) or re.findall('piscina',mensaje3[es][filtrar]) or re.findall('jacuzzi',mensaje3[es][filtrar]) or re.findall('aire',mensaje3[es][filtrar]) or re.findall('amueblado',mensaje3[es][filtrar]) or re.findall('marmol',mensaje3[es][filtrar]) or re.findall('vacío',mensaje3[es][filtrar]) or re.findall('vacio',mensaje3[es][filtrar]):
+        elif re.findall('penthouse',mensaje3[es][filtrar]) or re.findall('ph',mensaje3[es][filtrar]):#penthouse
             cuali.append(es)
             na_cuali.append(es)
             if es == cuali[len(na_cuali)-1]:
                 cualitativos[es].append(mensaje3[es][filtrar])
             else:
                 cualitativos.append([mensaje3[es][filtrar]])
+#            print(mensaje3[es][filtrar-1])
+            
+        if re.findall('balcón',mensaje3[es][filtrar]) or re.findall('balcon',mensaje3[es][filtrar]):#balcon
+            cuali.append(es)
+            na_cuali.append(es)
+            if es == cuali[len(na_cuali)-1]:
+                cualitativos[es].append(mensaje3[es][filtrar])
+            else:
+                cualitativos.append([mensaje3[es][filtrar]])
+        elif re.findall('estudio',mensaje3[es][filtrar]):#estudio
+            cuali.append(es)
+            na_cuali.append(es)
+            if es == cuali[len(na_cuali)-1]:
+                cualitativos[es].append(mensaje3[es][filtrar])
+            else:
+                cualitativos.append([mensaje3[es][filtrar]])
+        elif re.findall('piscina',mensaje3[es][filtrar]):#piscina
+            cuali.append(es)
+            na_cuali.append(es)
+            if es == cuali[len(na_cuali)-1]:
+                cualitativos[es].append(mensaje3[es][filtrar])
+            else:
+                cualitativos.append([mensaje3[es][filtrar]])
+        elif re.findall('jacuzzi',mensaje3[es][filtrar]):#jacuzzi
+            cuali.append(es)
+            na_cuali.append(es)
+            if es == cuali[len(na_cuali)-1]:
+                cualitativos[es].append(mensaje3[es][filtrar])
+            else:
+                cualitativos.append([mensaje3[es][filtrar]])
+        elif re.findall('terraza',mensaje3[es][filtrar]):#terraza
+            cuali.append(es)
+            na_cuali.append(es)
+            if es == cuali[len(na_cuali)-1]:
+                cualitativos[es].append(mensaje3[es][filtrar])
+            else:
+                cualitativos.append([mensaje3[es][filtrar]])
+        elif re.findall('aire',mensaje3[es][filtrar]):#aire
+            cuali.append(es)
+            na_cuali.append(es)
+            if es == cuali[len(na_cuali)-1]:
+                cualitativos[es].append(mensaje3[es][filtrar])
+            else:
+                cualitativos.append([mensaje3[es][filtrar]])
+            print( mensaje3[es][filtrar])
+        elif re.findall('amueblado',mensaje3[es][filtrar]) or re.findall('marmol',mensaje3[es][filtrar]) or re.findall('vacío',mensaje3[es][filtrar]) or re.findall('vacio',mensaje3[es][filtrar]):
+            cuali.append(es)
+            na_cuali.append(es)
+            if es == cuali[len(na_cuali)-1]:
+                cualitativos[es].append(mensaje3[es][filtrar])
+            else:
+                cualitativos.append([mensaje3[es][filtrar]])
+        #monto
+ #       elif re.findall('$',mensaje3[es][filtrar]) or re.findall('rd$',mensaje3[es][filtrar]) or re.findall('us$',mensaje3[es][filtrar]):
+ #           mon.append(es)
+ #           na_monto.append(es)
+ #           if es == mon[len(na_monto)-1]:
+ #               monto[es].append(mensaje3[es][filtrar])
+ #           else:
+ #               monto.append([mensaje3[es][filtrar]])
     if len(celular) != nume_c:
         celular.append(celular[len(celular)-1])
     if len(correo) != nume_c:
@@ -447,6 +507,10 @@ for es in range(len(mensaje3)):#filtro
         tipo.append('')
     if len(cualitativos) != nume_c:
         cualitativos.append('')
+    if len(penthouse) != nume_c:
+        penthouse.append('')
+    if len(monto) != nume_c:
+        monto.append('')
 #para subir los datos al excel
 for h in range(len(celular)): 
     data['Celular'].append(celular[h])
@@ -457,7 +521,10 @@ for h in range(len(celular)):
     data['Av. Principal (Sto. Dgo.)'].append(av[h])
     data['Tipo de inmueble'].append(tipo[h])
     data['Cualitativos'].append(cualitativos[h])
-df = pd.DataFrame(data, columns = ['Celular','Correo','Ciudad','Sector','Lugar','Av. Principal (Sto. Dgo.)','Tipo de inmueble','Cualitativos'])
+    data['Penthouse'].append(cualitativos[h])
+    data['Monto'].append(monto[h])
+    data['Descripcion'].append(mensaje3[h])
+df = pd.DataFrame(data, columns = ['Celular','Correo','Ciudad','Sector','Lugar','Av. Principal (Sto. Dgo.)','Tipo de inmueble','Cualitativos','Penthouse','Monto','Descripcion'])
 df.to_excel('tabla.xlsx', sheet_name='Datos_de_Whatsapp')
 
-print(mensaje3[2900])
+# monto, fecha
