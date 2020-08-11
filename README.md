@@ -5,7 +5,7 @@
 <h5>.</h5>
 <h3>3-procesar los datos</h3>
 <h5>.</h5>
-<h3>4-Explotar los datos</h3>
+<h3>4-Explorar los datos</h3>
 <h5>.</h5>
 <h3>5-Realizar analisis en profundidad con Machine Learning</h3>
 <h5>.</h5>
