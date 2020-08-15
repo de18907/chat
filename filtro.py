@@ -474,33 +474,6 @@ def filtrarr(root):
         if len(ciudad) != nume_c:
             ciudad.append('')
         nume_c += 1 
-    """
-    #lugar
-            if re.findall('metro',mensaje3[es][filtrar]) and re.findall('country',mensaje3[es][filtrar]) and re.findall('club',mensaje3[es][filtrar]):
-                lug.append(es)
-                na_lug.append(es)
-                if es == lug[len(na_lug)-1]:
-                    lugar[es].append(f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]} {mensaje3[es][filtrar+2]}')
-                else:
-                    lugar.append([f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]} {mensaje3[es][filtrar+2]}'])
-            elif re.findall('casa',mensaje3[es][filtrar]) and re.findall('de',mensaje3[es][filtrar]) and re.findall('campo',mensaje3[es][filtrar]):
-                lug.append(es)
-                na_lug.append(es)
-                if es == lug[len(na_lug)-1]:
-                    lugar[es].append(f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]} {mensaje3[es][filtrar+2]}')
-                else:
-                    lugar.append([f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]} {mensaje3[es][filtrar+2]}'])
-            elif re.findall('guavaberry',mensaje3[es][filtrar]) or re.findall('hemingway',mensaje3[es][filtrar]):
-                lug.append(es)
-                na_lug.append(es)
-                if es == lug[len(na_lug)-1]:
-                    lugar[es].append(f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}')
-                else:
-                    lugar.append([f'{mensaje3[es][filtrar]} {mensaje3[es][filtrar+1]}'])
-
-        if len(lugar) != nume_c:
-            lugar.append('')
-    """
     #para subir los datos al excel
     for h in range(len(mensaje3)): 
         data['Fecha'].append(fecha[h])
