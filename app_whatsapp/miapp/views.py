@@ -24,3 +24,4 @@ def filtro(request):
 def pagina(request):
     return render(request, 'pagina.html')
 
+
