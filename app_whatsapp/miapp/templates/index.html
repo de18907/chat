@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% block title %}{{title}}{% endblock %}
+{% block content %}
+<h1>Inicio</h1>
+{{mi_variable}}
+{% if nombre %}
+    <p>{{nombre}}</p>
+{% else %}  
+    <p>No existe el nombre</p>
+{% endif %}
+{% for ver in datos %}
+    <p>{{forloop.counter}}- {{ver}}</p>
+{% empty %}
+    <p>No hay lenguajes que mostrar</p>    
+    
+{% endfor %}
+{% endblock %}

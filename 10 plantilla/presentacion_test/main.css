@@ -1,0 +1,35 @@
+h1 {
+  color: yellowgreen;
+}
+
+body {
+  background-image: url(multimedia/fondo.png);
+  background-size: 100%;
+  background-size: center;
+  text-align: center;
+}
+
+section {
+  display: none;
+}
+
+.visible {
+  display: inline;
+}
+
+#divContenido {
+  background-color: #F0F8FF;
+  opacity: 0.9;
+  border-radius: 20px;
+  margin-top: 90px;
+  padding: 20px;
+  min-height: 500px;
+}
+
+span {
+  color: LimeGreen;
+}
+
+.img {
+  float: left;
+}

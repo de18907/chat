@@ -1,0 +1,1 @@
+https://docs.microsoft.com/en-us/analysis-services/analysis-services-overview?view=asallproducts-allversions&viewFallbackFrom=sql-server-2017

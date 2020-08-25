@@ -1,0 +1,5 @@
+https://docs.opencv.org/4.2.0/
+https://opencv.org/courses/
+https://courses.learnopencv.com/p/computer-vision-for-faces
+https://www.coursera.org/learn/deteccion-objetos
+https://www.youtube.com/watch?v=PaJ1rU-DgLs

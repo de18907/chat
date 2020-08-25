@@ -1,0 +1,8 @@
+la verdad absoluta: No cambia  
+la verdad personal: no afecta cada creencia 
+la verdad de hechos: solo Dios la conoce 
+
+require(sas7bdat)
+input<-read.sas7bdat("C:\Users\Sergio\Desktop\R\practica_de_R")
+
+Funciones INL en SAS

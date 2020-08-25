@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>¿Serás rico o pobre?</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="main.css" rel="stylesheet">
+</head>
+<body>
+    <div id="divContenido"  class="container" ><!--pagina principal-->
+        <img class="img" src="multimedia/atras.png" height="70px" width="70px" onclick="cambiar(-1);">
+        <section class="visible"  class="row">
+            <div class="center"  class="col-xs- col-sm- col-md col-lg-12"><br><br><br><br>
+                <p><h1>¿Serás rico o pobre? – Test de personalidad</h1><p><br><br><br>
+                <img src="multimedia/siguiente.png" height="120px" width="400px" onclick="cambiar(1, 0);">
+            </div>
+        </section>
+        <section><!--1 pagina-->
+            <div class="container">
+                    <p><h3><span>1)</span>Te han ofrecido un trato: puedes recibir 10 000 USD en <br>este momento o esperar un año y recibir 100 000 USD.</h3></p>
+                <p><h1>¿Que elegirias?</h1></p>
+                <div class="row">
+                    <div borders="1px" class="col-xs- col-sm- col-md col-lg-4" onclick="cambiar(1, 20);">
+                            <p><span>1)</span> ! yo diría "no" a ambos! Debe haber alguna trampa aquí<br><img src="multimedia/no.png" height="205px" width="143px"></p>
+                    </div>
+                    <div borders="1px" class=" col-xs- col-sm- col-md col-lg-4" onclick="cambiar(1, 10);">
+                            <p><span>2)</span> Tomaré el dinero ahora, por supuesto<br><br><img src="multimedia/tener.png" height="205px" width="180px"></p>
+                    </div>
+                    <div borders="1px" class=" col-xs- col-sm- col-md col-lg-4" onclick="cambiar(1, 30);">
+                            <p><span>3)</span> Esperaré un año para obtener mas dinero<br><br><img src="multimedia/despues.png" height="205px" width="200px"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section><!--2 pagina-->
+            <div class="container">
+                <p><h3><span>2)</span>El asistente en la tienda te dice que tiene una oferta genial:<br> compra 2 pares y recibe 1 gratis.</h3></p>
+                <p><h1>¿Comprarias el segundo par que no tenías planeado para conseguir ese tercer par gratis?</h1></p>
+                <div class="row">
+                    <div borders="1px" class="col-xs- col-sm- col-md col-lg-4"  onclick="cambiar(1, 10);">
+                        <p><span>1)</span> !Por supuesto, es una gran oferta!<br><img src="multimedia/oferta.jpg" height="180px" width="190px"></p>
+                    </div>
+                    <div borders="1px" class=" col-xs- col-sm- col-md col-lg-4"  onclick="cambiar(1, 20);">
+                        <p><span>2)</span>Sí, es una buena oferta pero, no me comprometeré a comprar más<br><img src="multimedia/ver.png" height="155px" width="140px"></p>
+                    </div>
+                    <div borders="1px" class=" col-xs- col-sm- col-md col-lg-4"  onclick="cambiar(1, 30);">
+                        <p><span>3)</span> vine para comprar un par y me voy de ahí con ese par<br><img src="multimedia/mio.png" height="157px" width="130px"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section><!--3 pagina-->
+            <div class="container">
+                <p><h3><span>3)</span>Hablando de compras</h3><h1>¿Haces lista de compras y te apegas a un presupuesto?</h1></p>
+                <div class="row">
+                    <div borders="1px" class="col-xs- col-sm- col-md col-lg-4"  onclick="cambiar(1, 30);">
+                        <p><span>1)</span> !Absolutamente!<br><br><img src="multimedia/lista.png" height="245px" width="248px"></p>
+                    </div>
+                    <div borders="1px" class=" col-xs- col-sm- col-md col-lg-4"  onclick="cambiar(1, 10);">
+                        <p><span>2)</span> No, ¿quién tiene tiempo para eso?<br><br><img src="multimedia/carrito.png" height="245px" width="190px"></p>
+                    </div>
+                    <div borders="1px" class=" col-xs- col-sm- col-md col-lg-4"  onclick="cambiar(1, 20);">
+                        <p><span>3)</span> Aveces, solo cuando me queda poco dinero<br><img src="multimedia/poco.png" height="270px" width="175px"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section><!--4 pagina-->
+            <div class="container">
+                <p><h3><span>4)</span>Está a punto de ser lanzado un nuevo smartphone, y todo el<br> mundo se la pasa hablando de él. Tu celular está funcionando a la perfección. </h3><h1>¿Te comprarás ese ultimo modelo del que tanto hablan?</h1></p>
+                <div class="row">
+                    <div borders="1px" class="col-xs- col-sm- col-md col-lg-4"  onclick="cambiar(1, 30);">
+                        <p><span>1)</span> No, estoy bien<br><br><img src="multimedia/telefono.jpg" height="190px" width="248px"></p>
+                    </div>
+                    <div borders="1px" class=" col-xs- col-sm- col-md col-lg-4"  onclick="cambiar(1, 20);">
+                        <p><span>2)</span> Sí, pero solo si puedo pagarlo<br><br><img src="multimedia/gastar.png" height="190px" width="200px"></p>
+                    </div>
+                    <div borders="1px" class=" col-xs- col-sm- col-md col-lg-4"  onclick="cambiar(1, 10);">
+                        <p><span>3)</span> !Lo necesito en mi vida ahora mismo!<br><br><img src="multimedia/necesito.png" height="190px" width="220px"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section><!--5 pagina-->
+            <div class="container">
+                <p><h1><span>5)</span>¿Cuál es el regalo de cumpleaños perfecto para ti?</h1></p>
+                <div class="row">
+                    <div borders="1px" class="col-xs- col-sm- col-md col-lg-4"  onclick="cambiar(1, 10);">
+                        <p><span>1)</span> Dinero, dinero, dinero<br><br><br><img src="multimedia/dinero.png" height="229px" width="258px"></p>
+                    </div>
+                    <div borders="1px" class=" col-xs- col-sm- col-md col-lg-4"  onclick="cambiar(1, 30);">
+                        <p><span>2)</span> Cursos en línea o suscripción a una biblioteca de musica<br><br><img src="multimedia/curso.png" height="227px" width="225px"></p>
+                    </div>
+                    <div borders="1px" class=" col-xs- col-sm- col-md col-lg-4"  onclick="cambiar(1, 20);">
+                        <p><span>3)</span> Algo divertido que nunca me compraría yo mismo<br><br><img src="multimedia/regalo.png" height="227px" width="220px"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section><!--6 pagina-->
+            <div class="container">
+                <p><h3><span>6)</span>Tu amigo te dice que tiene 2 entradas gratis para un concierto de tu banda favorita.Eso implica que tendrás que apagar el viaje y el alojamiento.</h3><h1>¿Qué dices?</h1></p>
+                <div class="row">
+                    <div borders="1px" class="col-xs- col-sm- col-md col-lg-4"  onclick="cambiar(1, 30);">
+                        <p><span>1)</span> No, porque no estaba en mi presupuesto mensual<br><img src="multimedia/presupuesto.png" height="210px" width="250px"></p>
+                    </div>
+                    <div borders="1px" class=" col-xs- col-sm- col-md col-lg-4"  onclick="cambiar(1, 10);">
+                        <p><span>2)</span> !Sí, claro!<br><br><img src="multimedia/fiesta.png" height="210px" width="200px"></p>
+                    </div>
+                    <div borders="1px" class=" col-xs- col-sm- col-md col-lg-4"  onclick="cambiar(1, 20);">
+                        <p><span>3)</span> Déjame ver cuánto me costarán<br> los boletos de avión y el hotel<br><img src="multimedia/ticket.jpg" height="210px" width="200px"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section><!--7 pagina-->
+            <div class="container">
+                <p><h1><span>7)</span>¿Cuál de las siguientes opciones suena más parecido a tus hábitos alimenticios?</h1></p>
+                <div class="row">
+                    <div borders="1px" class="col-xs- col-sm- col-md col-lg-4"  onclick="cambiar(1, 10);">
+                        <p><span>1)</span> Comida chatarra siempre<br><br><br><img src="multimedia/cha.png" height="240px" width="250px"></p>
+                    </div>
+                    <div borders="1px" class=" col-xs- col-sm- col-md col-lg-4"  onclick="cambiar(1, 30);">
+                        <p><span>2)</span> Como saludable y cocino para mí<br><br><br><img src="multimedia/comida.png" height="240px" width="220px"></p>
+                    </div>
+                    <div borders="1px" class=" col-xs- col-sm- col-md col-lg-4"  onclick="cambiar(1, 20);">
+                        <p><span>3)</span> Me encanta comer fuera, pero solo en restaurantes lindos o atmosféricos<br><br><img src="multimedia/re.png" height="240px" width="250px"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section><!--8 pagina-->
+            <div class="container">
+                <p><h1><span>8)</span>¿Prefieres tener un trabajo seguro bien pagado pero aburrido o tomar riesgos y hacer algo que te guste?</h1></p>
+                <div class="row">
+                    <div borders="1px" class="col-xs- col-sm- col-md col-lg-4"  onclick="cambiar(1, 20);">
+                        <p><span>1)</span> Elegiré ese trabajo rutinario<br><br><br><img src="multimedia/trabajar.png" height="215px" width="260px"></p>
+                    </div>
+                    <div borders="1px" class=" col-xs- col-sm- col-md col-lg-4"  onclick="cambiar(1, 30);">
+                        <p><span>2)</span> Trataré de sacar el mayor provecho de mi hobby<br><img src="multimedia/sacar.png" height="240px" width="230px"></p>
+                    </div>
+                    <div borders="1px" class=" col-xs- col-sm- col-md col-lg-4"  onclick="cambiar(1, 10);">
+                        <p><span>3)</span> Haré lo que amo. !El dinero no lo es todo!<br><br><img src="multimedia/mi.png" height="240px" width="180px"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section><!--9 pagina me queda-->
+            <div class="container">
+                <p><h3><span>9)</span>Te ofrecen un ascenso, pero tienen que despedir a tu mejor amigo.</h3><h1>¿Qué harías?</h1></p>
+                <div class="row">
+                    <div borders="1px" class="col-xs- col-sm- col-md col-lg-4"  onclick="cambiar(1, 10);">
+                        <p><span>1)</span> Claro que lo rechazaré<br><br><img src="multimedia/rechazo.png" height="245px" width="248px"></p>
+                    </div>
+                    <div borders="1px" class=" col-xs- col-sm- col-md col-lg-4"  onclick="cambiar(1, 20);">
+                        <p><span>2)</span> Hablaré con mi amigo y luego tomaré una decisión<br><img src="multimedia/hablar.png" height="245px" width="250px"></p>
+                    </div>
+                    <div borders="1px" class=" col-xs- col-sm- col-md col-lg-4"  onclick="cambiar(1, 30);">
+                        <p><span>3)</span> Lo aceptaré. Mi amigo lo entenderá<br><br><img src="multimedia/fuera.png" height="247px" width="230px"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section><!--10 pagina-->
+            <div class="container">
+                <p><h1><span>10)</span>¿Cual crees que es el sentido de la vida?</h1></p>
+                <div class="row">
+                    <div borders="1px" class="col-xs- col-sm- col-md col-lg-4"  onclick="cambiar(1, 30);">
+                        <p><span>1)</span> Lograr todos los objetivos, incluidos los financieros<br><br><br><img src="multimedia/objetivos.png" height="210px" width="260px"></p>
+                    </div>
+                    <div borders="1px" class=" col-xs- col-sm- col-md col-lg-4"  onclick="cambiar(1, 20);">
+                        <p><span>2)</span> Se trata de disfrutar el viaje y no de llegar al destino<br><br><img src="multimedia/p.aspx" height="260px" width="230px"></p>
+                    </div>
+                    <div borders="1px" class=" col-xs- col-sm- col-md col-lg-4"  onclick="cambiar(1, 10);">
+                        <p><span>3)</span> Cambiar el mundo para el bien común<br><br><br><img src="multimedia/mahatma.png" height="261px" width="290px"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

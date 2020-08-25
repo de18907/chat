@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+{% block title %}Pagina{% endblock %}
+
+{% block content %}
+<h1>Filtro para Whatsapp</h1>
+<div class="container">
+    <div class="row">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-10">
+      </div>
+      <div class="col-sm-1"></div>
+    </div>
+  </div>
+  {% load filters %}
+  {{"Sergio Minaya"|saludo|safe}}
+  <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Fecha</th>
+          <th scope="col">Nombre y Celular</th>
+          <th scope="col">Correo</th>
+          <th scope="col">Av. Principal (Sto. Dgo.)</th>
+          <th scope="col">Ciudad</th>
+          <th scope="col">Sector</th>
+          <th scope="col">Tipo de inmueble</th>
+          <th scope="col">Cualitativos</th>
+          <th scope="col">Baño</th>
+          <th scope="col">Habitacion</th>
+          <th scope="col">Monto
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+          <td>@mdo</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+          <td>@mdo</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+{% endblock %}
