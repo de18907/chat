@@ -2,12 +2,36 @@ import os
 from os import remove
 import re
 import pandas as pd
+from tkinter import filedialog
+from tkinter import * 
+try:
+    import Tkinter as tk
+except:
+    import tkinter as tk
+#Buscador de archivo -------------------------------------------------------------------------
+ventana =tk.Tk()
+Myframe = Frame(ventana)
+#root = tkinter() #esto se hace solo para eliminar la ventanita de Tkinter 
+#root.withdraw() #ahora se cierra 
+
+def abrir_archivo():
+    archivo_abierto=filedialog.askopenfilename(initialdir = "/c:/users",
+                title = "Seleccione archivo",filetypes = (("txt files","*.txt"),
+                ("all files","*.*")))
+    print(archivo_abierto)
+
+Button(text="Abrir archivo",bg="pale green",command=abrir_archivo).place(x=10,y=10)
+ventana.mainloop()
+
 #archivo -------------------------------------------------------------------------
+
+
 class archivos:
     lista_archivos_chat = []
-    dirs1 = os.listdir("chat/")#achivos del chat 
+    dirs1 = os.listdir("archivo_abierto")#achivos del chat 
     for file_chat in dirs1:
-        lista_archivos_chat.append(f"chat/{file_chat}")   
+        lista_archivos_chat.append(f"archivo_abierto/{file_chat}")  
+         
 #mensaje -------------------------------------------------------------------------
 class mensajes:
     posicion = []#lista de achivos del chat
